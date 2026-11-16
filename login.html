@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Login | Área Restrita</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">MeuPortfólio</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="quemsoueu.html">Quem sou eu</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="login.html" class="lock-icon" aria-label="Entrar na área restrita">🔒</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 400px; margin: 5rem auto; padding: 2rem; background: #fff; border-radius: 8px; border: 1px solid #eaeaea;">
+        <h1 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Área Restrita</h1>
+        
+        <form id="loginForm">
+            <div style="margin-bottom: 1rem;">
+                <label for="usuario" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Usuário</label>
+                <input type="text" id="usuario" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <label for="senha" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Senha</label>
+                <input type="password" id="senha" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            
+            <button type="submit" class="btn" style="width: 100%; cursor: pointer; border: none;">Entrar</button>
+            <p id="erroMsg" style="color: red; font-size: 0.9rem; margin-top: 1rem; text-align: center;"></p>
+        </form>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
