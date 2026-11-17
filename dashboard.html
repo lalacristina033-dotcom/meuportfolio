@@ -6,6 +6,7 @@
     <meta name="robots" content="noindex">
     <title>Dashboard | Painel de Controle</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -13,14 +14,15 @@
         <nav>
             <a href="index.html" class="logo">MeuPortfólio (Painel)</a>
             <ul class="nav-links">
-                <li><a href="index.html">Sair / Home</a></li>
+                <li><a href="portfolio.html">Ver Portfólio</a></li>
+                <li><a href="index.html">Sair</a></li>
             </ul>
         </nav>
     </header>
 
     <main style="max-width: 600px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 8px; border: 1px solid #eaeaea;">
         <h1>Cadastrar Novo Projeto</h1>
-        <p style="color: #666; margin-bottom: 1.5rem; font-size: 0.95rem;">Preencha os dados abaixo para adicionar um trabalho à sua vitrine.</p>
+        <p style="color: #666; margin-bottom: 1.5rem; font-size: 0.95rem;">Preencha os dados abaixo para salvar no banco de dados Supabase.</p>
         
         <form id="projetoForm">
             <div style="margin-bottom: 1rem;">
@@ -38,13 +40,39 @@
                 <input type="url" id="link" placeholder="https://..." required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;">
             </div>
             
-            <button type="submit" class="btn" style="width: 100%; cursor: pointer; border: none;">Salvar Projeto</button>
+            <button type="submit" class="btn" style="width: 100%; cursor: pointer; border: none;">Salvar no Supabase</button>
+            <p id="statusMsg" style="margin-top: 1rem; text-align: center; font-weight: 500;"></p>
         </form>
     </main>
 
-    <footer style="text-align: center; padding: 2rem; color: #777; font-size: 0.9rem; border-top: 1px solid #eaeaea; margin-top: 4rem;">
-        <p>&copy; 2026 - Área Restrita do Portfólio.</p>
-    </footer>
+    <script>
+        const SUPABASE_URL = 'https://ffciozzntkkcedlgjnsv.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_gXfJoH4bKA0Qf4KvrA9mmg_fS6IaGPx';
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+        document.getElementById('projetoForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const statusMsg = document.getElementById('statusMsg');
+            statusMsg.textContent = "Salvando...";
+            statusMsg.style.color = "#555";
+
+            const titulo = document.getElementById('titulo').value;
+            const descricao = document.getElementById('descricao').value;
+            const link = document.getElementById('link').value;
+
+            const { error } = await supabaseClient
+                .from('projetos')
+                .insert([{ titulo: titulo, descricao: descricao, link: link }]);
+
+            if (error) {
+                statusMsg.textContent = "Erro ao salvar: " + error.message;
+                statusMsg.style.color = "red";
+            } else {
+                statusMsg.textContent = "Projeto salvo com sucesso no Supabase!";
+                statusMsg.style.color = "green";
+                document.getElementById('projetoForm').reset();
+            }
+        });
+    </script>
 </body>
 </html>
