@@ -6,10 +6,10 @@
     <meta name="description" content="Conheça mais sobre minha trajetória, formação e objetivos na área de tecnologia.">
     <title>Meu Portfólio | Quem Sou Eu</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
-    <!-- Header com o menu padrão -->
     <header>
         <nav>
             <a href="index.html" class="logo">MeuPortfólio</a>
@@ -25,7 +25,7 @@
     <main style="max-width: 1100px; margin: 3rem auto; padding: 0 2rem;">
         <h1>Quem sou eu</h1>
         <p style="margin-top: 1rem; color: #666; font-size: 1.1rem;">
-            Sou estudante do Ensino Médio Técnico e apaixonado por inovação, desenvolvimento web e tecnologia da informação. Busco sempre aprender novas ferramentas para criar soluções práticas e eficientes.
+            Sou estudante do Ensino Médio Técnico e apaixonado por inovação, desenvolvimento web e tecnologia da informação.
         </p>
 
         <section style="margin-top: 2rem;">
@@ -37,9 +37,24 @@
             </ul>
         </section>
 
-        <section style="margin-top: 2rem;">
-            <h2>Contato</h2>
-            <p style="margin-top: 0.5rem; color: #555;">Você pode entrar em contato comigo através do e-mail escolar ou redes profissionais.</p>
+        <section style="margin-top: 3rem; max-width: 500px;">
+            <h2>Entre em Contato</h2>
+            <form id="leadForm" style="margin-top: 1rem;">
+                <div style="margin-bottom: 1rem;">
+                    <label for="nome" style="display: block; margin-bottom: 0.4rem; font-weight: 500;">Seu Nome</label>
+                    <input type="text" id="nome" required style="width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="email" style="display: block; margin-bottom: 0.4rem; font-weight: 500;">Seu E-mail</label>
+                    <input type="email" id="email" required style="width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="mensagem" style="display: block; margin-bottom: 0.4rem; font-weight: 500;">Mensagem</label>
+                    <textarea id="mensagem" rows="4" required style="width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                </div>
+                <button type="submit" class="btn" style="cursor: pointer; border: none;">Enviar Mensagem</button>
+                <p id="leadStatus" style="margin-top: 0.8rem; font-weight: 500;"></p>
+            </form>
         </section>
     </main>
 
@@ -47,5 +62,31 @@
         <p>&copy; 2026 - Desenvolvido com foco em SEO e semântica.</p>
     </footer>
 
+    <script>
+        const SUPABASE_URL = 'https://ffciozzntkkcedlgjnsv.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_gXfJoH4bKA0Qf4KvrA9mmg_fS6IaGPx';
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const status = document.getElementById('leadStatus');
+            status.textContent = "Enviando...";
+
+            const { error } = await supabaseClient.from('leads').insert([{
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                mensagem: document.getElementById('mensagem').value
+            }]);
+
+            if (error) {
+                status.textContent = "Erro ao enviar: " + error.message;
+                status.style.color = "red";
+            } else {
+                status.textContent = "Mensagem enviada com sucesso!";
+                status.style.color = "green";
+                document.getElementById('leadForm').reset();
+            }
+        });
+    </script>
 </body>
 </html>
