@@ -6,6 +6,7 @@
     <meta name="robots" content="noindex">
     <title>Login | Área Restrita</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -40,6 +41,35 @@
         </form>
     </main>
 
-    <script src="js/login.js"></script>
+    <script>
+        const SUPABASE_URL = 'https://ffciozzntkkcedlgjnsv.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_gXfJoH4bKA0Qf4KvrA9mmg_fS6IaGPx';
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const usuarioInput = document.getElementById('usuario').value;
+            const senhaInput = document.getElementById('senha').value;
+            const erroMsg = document.getElementById('erroMsg');
+
+            erroMsg.textContent = "Verificando...";
+            erroMsg.style.color = "#555";
+
+            const { data, error } = await supabaseClient
+                .from('usuarios')
+                .select('*')
+                .eq('usuario', usuarioInput)
+                .eq('senha', senhaInput)
+                .single();
+
+            if (error || !data) {
+                erroMsg.textContent = "Usuário ou senha incorretos.";
+                erroMsg.style.color = "red";
+            } else {
+                window.location.href = "dashboard.html";
+            }
+        });
+    </script>
 </body>
 </html>
