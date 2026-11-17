@@ -49,8 +49,8 @@
         document.getElementById('loginForm').addEventListener('submit', async function(event) {
             event.preventDefault();
             
-            const usuarioInput = document.getElementById('usuario').value;
-            const senhaInput = document.getElementById('senha').value;
+            const usuarioInput = document.getElementById('usuario').value.trim();
+            const senhaInput = document.getElementById('senha').value.trim();
             const erroMsg = document.getElementById('erroMsg');
 
             erroMsg.textContent = "Verificando...";
@@ -60,10 +60,9 @@
                 .from('usuarios')
                 .select('*')
                 .eq('usuario', usuarioInput)
-                .eq('senha', senhaInput)
-                .single();
+                .eq('senha', senhaInput);
 
-            if (error || !data) {
+            if (error || !data || data.length === 0) {
                 erroMsg.textContent = "Usuário ou senha incorretos.";
                 erroMsg.style.color = "red";
             } else {
