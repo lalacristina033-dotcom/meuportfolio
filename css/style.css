@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #0b0f19; /* Fundo escuro profundo premium */
-    color: #f1f5f9; /* Texto principal em branco claro bem visível */
+    background-color: #0b0f19; /* Fundo escuro profundo */
+    color: #f1f5f9; /* Texto claro principal */
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@ nav {
     color: #38bdf8;
 }
 
-/* Container Principal */
+/* Container Principal e Caixas de Conteúdo */
 main {
     max-width: 900px;
     width: 100%;
@@ -68,20 +68,57 @@ main {
     flex: 1;
 }
 
-/* Estilização de Títulos e Textos para garantir alto contraste */
-h1, h2, h3 {
+/* Força todos os títulos, textos de formulário e rótulos a ficarem visíveis e legíveis */
+h1, h2, h3, h4, label {
     color: #ffffff !important;
 }
 
-p {
+p, span, small {
     color: #cbd5e1 !important;
+}
+
+/* Estilização universal para blocos, cartões e formulários brancos antigos */
+section, main > div, form, [style*="background"] {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-radius: 16px !important;
+    color: #f1f5f9 !important;
+}
+
+/* Campos de Entrada (Inputs e Textareas) */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid #475569 !important;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    background-color: #0f172a !important; /* Fundo escuro para destacar o texto digitado */
+    color: #ffffff !important; /* Texto digitado bem branco */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
 }
 
 /* Botões Padrão */
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, #38bdf8, #0284c7);
-    color: #ffffff;
+    color: #ffffff !important;
     padding: 0.85rem 1.75rem;
     border-radius: 10px;
     text-decoration: none;
@@ -96,39 +133,6 @@ p {
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
-}
-
-/* Campos de Formulário */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-textarea {
-    width: 100%;
-    padding: 0.85rem;
-    border: 1px solid #334155;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-    outline: none;
-    background-color: #1e293b;
-    color: #ffffff;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-input:focus,
-textarea:focus {
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
-}
-
-/* Cards de Destaque */
-section.card, main section[style*="background"] {
-    background-color: #1e293b !important;
-    border: 1px solid #334155 !important;
-    border-radius: 16px !important;
-    padding: 2.5rem !important;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
 /* Rodapé */
