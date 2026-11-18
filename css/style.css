@@ -1,4 +1,4 @@
-/* Configurações Globais */
+/* Configurações Globais - Estilo Escuro Moderno */
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #f9fafb;
-    color: #1f2937;
+    background-color: #0f172a; /* Fundo escuro azulado elegante */
+    color: #e2e8f0; /* Texto claro suave */
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -17,8 +17,8 @@ body {
 
 /* Cabeçalho e Navegação */
 header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    background-color: #1e293b;
+    border-bottom: 1px solid #334155;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -36,7 +36,7 @@ nav {
 .logo {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #111827;
+    color: #f8fafc;
     text-decoration: none;
 }
 
@@ -49,16 +49,16 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #4b5563;
+    color: #94a3b8;
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .nav-links a:hover {
-    color: #111827;
+    color: #38bdf8;
 }
 
-/* Container Principal para Centralizar */
+/* Container Principal */
 main {
     max-width: 900px;
     width: 100%;
@@ -70,8 +70,8 @@ main {
 /* Botões Padrão */
 .btn {
     display: inline-block;
-    background-color: #111827;
-    color: #ffffff;
+    background-color: #38bdf8;
+    color: #0f172a;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     text-decoration: none;
@@ -83,7 +83,7 @@ main {
 }
 
 .btn:hover {
-    background-color: #374151;
+    background-color: #0ea5e9;
 }
 
 /* Campos de Formulário */
@@ -94,29 +94,37 @@ input[type="url"],
 textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid #334155;
     border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
     outline: none;
-    background-color: #fff;
+    background-color: #1e293b;
+    color: #f8fafc;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 input:focus,
 textarea:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+/* Cards de Destaque */
+section.card, main section[style*="background"] {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #e2e8f0 !important;
 }
 
 /* Rodapé */
 footer {
     text-align: center;
     padding: 2rem;
-    color: #6b7280;
+    color: #94a3b8;
     font-size: 0.9rem;
-    border-top: 1px solid #e5e7eb;
-    background-color: #ffffff;
+    border-top: 1px solid #334155;
+    background-color: #1e293b;
     margin-top: auto;
 }
 
