@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #0b0f19; /* Fundo escuro profundo */
+    background-color: #0b0f19; /* Fundo escuro profundo premium */
     color: #f1f5f9; /* Texto claro principal */
     line-height: 1.6;
     display: flex;
@@ -59,30 +59,26 @@ nav {
     color: #38bdf8;
 }
 
-/* Container Principal e Caixas de Conteúdo */
+/* Container Principal e Caixas (Dashboard e Login) */
 main {
     max-width: 900px;
     width: 100%;
     margin: 3rem auto;
-    padding: 0 2rem;
+    padding: 2.5rem;
     flex: 1;
+    background-color: #1e293b !important; /* Força o fundo escuro nas caixas de formulário */
+    border: 1px solid #334155 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
-/* Força todos os títulos, textos de formulário e rótulos a ficarem visíveis e legíveis */
+/* Força todos os títulos, textos e rótulos a ficarem visíveis e legíveis */
 h1, h2, h3, h4, label {
     color: #ffffff !important;
 }
 
 p, span, small {
     color: #cbd5e1 !important;
-}
-
-/* Estilização universal para blocos, cartões e formulários brancos antigos */
-section, main > div, form, [style*="background"] {
-    background-color: #1e293b !important;
-    border: 1px solid #334155 !important;
-    border-radius: 16px !important;
-    color: #f1f5f9 !important;
 }
 
 /* Campos de Entrada (Inputs e Textareas) */
@@ -98,9 +94,11 @@ textarea {
     font-family: inherit;
     font-size: 1rem;
     outline: none;
-    background-color: #0f172a !important; /* Fundo escuro para destacar o texto digitado */
+    background-color: #0f172a !important; /* Fundo escuro interno no input */
     color: #ffffff !important; /* Texto digitado bem branco */
     transition: border-color 0.2s, box-shadow 0.2s;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
 }
 
 input::placeholder,
@@ -128,6 +126,7 @@ textarea:focus {
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    width: 100%;
 }
 
 .btn:hover {
