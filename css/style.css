@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #0b0f19; /* Fundo escuro profundo premium */
-    color: #f1f5f9; /* Texto claro principal */
+    background-color: #0b0f19 !important; /* Fundo escuro profundo premium */
+    color: #f1f5f9 !important; /* Texto claro principal */
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -17,8 +17,8 @@ body {
 
 /* Cabeçalho e Navegação */
 header {
-    background-color: #111827;
-    border-bottom: 1px solid #1f2937;
+    background-color: #111827 !important;
+    border-bottom: 1px solid #1f2937 !important;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -36,7 +36,7 @@ nav {
 .logo {
     font-size: 1.35rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #ffffff !important;
     text-decoration: none;
     letter-spacing: -0.5px;
 }
@@ -50,47 +50,38 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #cbd5e1;
+    color: #cbd5e1 !important;
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .nav-links a:hover {
-    color: #38bdf8;
+    color: #38bdf8 !important;
 }
 
-/* Container Principal padrão para páginas normais */
+/* Container Principal */
 main {
     max-width: 900px;
     width: 100%;
     margin: 3rem auto;
     padding: 0 2rem;
     flex: 1;
+    background-color: transparent !important;
 }
 
-/* Exceção específica para as páginas de Formulário/Painel/Login (se o main tiver formulário dentro) */
-main:has(form), main:has(input) {
-    background-color: #1e293b !important;
-    border: 1px solid #334155 !important;
-    border-radius: 16px !important;
-    padding: 2.5rem !important;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-}
-
-/* Força todos os títulos, textos e rótulos a ficarem visíveis e legíveis */
-h1, h2, h3, h4, label {
+/* Força TODOS os títulos, parágrafos e textos a ficarem visíveis e legíveis */
+h1, h2, h3, h4, h5, h6, label {
     color: #ffffff !important;
 }
 
-p, span, small {
+p, span, small, li {
     color: #cbd5e1 !important;
 }
 
-/* Estilização universal para cards e seções internas em qualquer página */
-section, .card, [style*="background"] {
+/* Força TODOS os blocos, seções e cards a ficarem com fundo escuro moderno */
+section, div, .card, [style*="background"] {
     background-color: #1e293b !important;
     border: 1px solid #334155 !important;
-    border-radius: 16px !important;
     color: #f1f5f9 !important;
 }
 
@@ -107,7 +98,7 @@ textarea {
     font-family: inherit;
     font-size: 1rem;
     outline: none;
-    background-color: #0f172a !important; /* Fundo escuro interno no input */
+    background-color: #0f172a !important; /* Fundo escuro interno */
     color: #ffffff !important; /* Texto digitado bem branco */
     transition: border-color 0.2s, box-shadow 0.2s;
     margin-top: 0.3rem;
@@ -128,7 +119,7 @@ textarea:focus {
 /* Botões Padrão */
 .btn {
     display: inline-block;
-    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    background: linear-gradient(135deg, #38bdf8, #0284c7) !important;
     color: #ffffff !important;
     padding: 0.85rem 1.75rem;
     border-radius: 10px;
@@ -150,10 +141,10 @@ textarea:focus {
 footer {
     text-align: center;
     padding: 2rem;
-    color: #94a3b8;
+    color: #94a3b8 !important;
     font-size: 0.9rem;
-    border-top: 1px solid #1f2937;
-    background-color: #111827;
+    border-top: 1px solid #1f2937 !important;
+    background-color: #111827 !important;
     margin-top: auto;
 }
 
