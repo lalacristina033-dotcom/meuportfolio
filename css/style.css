@@ -59,16 +59,21 @@ nav {
     color: #38bdf8;
 }
 
-/* Container Principal e Caixas (Dashboard e Login) */
+/* Container Principal padrão para páginas normais */
 main {
     max-width: 900px;
     width: 100%;
     margin: 3rem auto;
-    padding: 2.5rem;
+    padding: 0 2rem;
     flex: 1;
-    background-color: #1e293b !important; /* Força o fundo escuro nas caixas de formulário */
+}
+
+/* Exceção específica para as páginas de Formulário/Painel/Login (se o main tiver formulário dentro) */
+main:has(form), main:has(input) {
+    background-color: #1e293b !important;
     border: 1px solid #334155 !important;
     border-radius: 16px !important;
+    padding: 2.5rem !important;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
@@ -79,6 +84,14 @@ h1, h2, h3, h4, label {
 
 p, span, small {
     color: #cbd5e1 !important;
+}
+
+/* Estilização universal para cards e seções internas em qualquer página */
+section, .card, [style*="background"] {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-radius: 16px !important;
+    color: #f1f5f9 !important;
 }
 
 /* Campos de Entrada (Inputs e Textareas) */
@@ -126,7 +139,6 @@ textarea:focus {
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
-    width: 100%;
 }
 
 .btn:hover {
