@@ -1,4 +1,4 @@
-/* Configurações Globais */
+/* Configurações Globais - Dark Mode Moderno e Confortável */
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #0b0f19; /* Fundo escuro profundo premium */
-    color: #f1f5f9; /* Texto claro principal */
+    background-color: #0b0f19 !important; /* Fundo escuro profundo premium */
+    color: #f1f5f9 !important; /* Texto claro principal */
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -17,8 +17,8 @@ body {
 
 /* Cabeçalho e Navegação */
 header {
-    background-color: #111827;
-    border-bottom: 1px solid #1f2937;
+    background-color: #111827 !important;
+    border-bottom: 1px solid #1f2937 !important;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -36,7 +36,7 @@ nav {
 .logo {
     font-size: 1.35rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #ffffff !important;
     text-decoration: none;
     letter-spacing: -0.5px;
 }
@@ -50,13 +50,13 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #cbd5e1;
+    color: #cbd5e1 !important;
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .nav-links a:hover {
-    color: #38bdf8;
+    color: #38bdf8 !important;
 }
 
 /* Container Principal */
@@ -66,39 +66,36 @@ main {
     margin: 3rem auto;
     padding: 0 2rem;
     flex: 1;
+    background-color: transparent !important;
 }
 
-/* Títulos e Textos Gerais */
-h1, h2, h3, h4, label {
-    color: #ffffff;
-    margin-bottom: 0.5rem;
+/* Títulos, Labels e Textos sempre visíveis */
+h1, h2, h3, h4, h5, h6, label {
+    color: #ffffff !important;
 }
 
 p, span, small, li {
-    color: #cbd5e1;
+    color: #cbd5e1 !important;
 }
 
-/* Cards e Seções de Destaque */
-section, .card {
-    background-color: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+/* ELIMINA QUALQUER FUNDO BRANCO: Força todas as caixas, seções, cards e divs a ficarem escuras e modernas */
+section, div, .card, [style*="background"] {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #f1f5f9 !important;
 }
 
-/* Formulários (Contato, Login e Dashboard) específicos e organizados */
-form {
-    background-color: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 16px;
-    padding: 2.5rem;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-    margin-top: 1rem;
+/* Ajuste específico para os cards dinâmicos gerados do Supabase na página de projetos */
+#projetos-container div, .projeto-card {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Campos de Entrada (Inputs e Textareas) */
+/* Campos de Entrada (Inputs, Textareas e Selects) */
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -106,13 +103,13 @@ input[type="url"],
 textarea {
     width: 100%;
     padding: 0.85rem;
-    border: 1px solid #475569;
+    border: 1px solid #475569 !important;
     border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
     outline: none;
-    background-color: #0f172a; /* Fundo escuro interno */
-    color: #ffffff; /* Texto digitado bem branco */
+    background-color: #0f172a !important; /* Fundo interno escuro */
+    color: #ffffff !important; /* Texto digitado bem branco */
     transition: border-color 0.2s, box-shadow 0.2s;
     margin-top: 0.3rem;
     margin-bottom: 1.25rem;
@@ -120,20 +117,20 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-    color: #94a3b8;
+    color: #94a3b8 !important;
 }
 
 input:focus,
 textarea:focus {
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2) !important;
 }
 
 /* Botões Padrão */
 .btn {
     display: inline-block;
-    background: linear-gradient(135deg, #38bdf8, #0284c7);
-    color: #ffffff;
+    background: linear-gradient(135deg, #38bdf8, #0284c7) !important;
+    color: #ffffff !important;
     padding: 0.85rem 1.75rem;
     border-radius: 10px;
     text-decoration: none;
@@ -154,10 +151,10 @@ textarea:focus {
 footer {
     text-align: center;
     padding: 2rem;
-    color: #94a3b8;
+    color: #94a3b8 !important;
     font-size: 0.9rem;
-    border-top: 1px solid #1f2937;
-    background-color: #111827;
+    border-top: 1px solid #1f2937 !important;
+    background-color: #111827 !important;
     margin-top: auto;
 }
 
