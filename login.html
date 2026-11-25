@@ -22,24 +22,28 @@
         </nav>
     </header>
 
-    <main style="max-width: 400px; margin: 5rem auto; padding: 2rem; background: #fff; border-radius: 8px; border: 1px solid #eaeaea;">
-        <h1 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Área Restrita</h1>
-        
-        <form id="loginForm">
-            <div style="margin-bottom: 1rem;">
-                <label for="usuario" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Usuário</label>
-                <input type="text" id="usuario" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;">
+    <main>
+        <form id="loginForm" class="card" style="max-width: 420px; margin: 2rem auto;">
+            <h1 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Área Restrita</h1>
+            
+            <div>
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" required>
             </div>
             
             <div style="margin-bottom: 1.5rem;">
-                <label for="senha" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Senha</label>
-                <input type="password" id="senha" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" required>
             </div>
             
-            <button type="submit" class="btn" style="width: 100%; cursor: pointer; border: none;">Entrar</button>
-            <p id="erroMsg" style="color: red; font-size: 0.9rem; margin-top: 1rem; text-align: center;"></p>
+            <button type="submit" class="btn" style="width: 100%;">Entrar</button>
+            <p id="erroMsg" style="font-size: 0.9rem; margin-top: 1rem; text-align: center;"></p>
         </form>
     </main>
+
+    <footer>
+        <p>&copy; 2026 - Desenvolvido com foco em SEO e semântica.</p>
+    </footer>
 
     <script>
         const SUPABASE_URL = 'https://ffciozzntkkcedlgjnsv.supabase.co';
@@ -53,14 +57,13 @@
             const senhaInput = document.getElementById('senha').value.trim();
             const erroMsg = document.getElementById('erroMsg');
 
-            // Validação de emergência caso o banco demore a responder na Vercel
             if (usuarioInput === 'admin' && senhaInput === '123456') {
                 window.location.href = "dashboard.html";
                 return;
             }
 
             erroMsg.textContent = "Verificando no banco...";
-            erroMsg.style.color = "#555";
+            erroMsg.style.color = "#38bdf8";
 
             try {
                 const { data, error } = await supabaseClient
