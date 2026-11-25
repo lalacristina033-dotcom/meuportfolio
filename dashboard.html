@@ -20,30 +20,34 @@
         </nav>
     </header>
 
-    <main style="max-width: 600px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 8px; border: 1px solid #eaeaea;">
-        <h1>Cadastrar Novo Projeto</h1>
-        <p style="color: #666; margin-bottom: 1.5rem; font-size: 0.95rem;">Preencha os dados abaixo para salvar no banco de dados Supabase.</p>
-        
-        <form id="projetoForm">
-            <div style="margin-bottom: 1rem;">
-                <label for="titulo" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Título do Projeto</label>
-                <input type="text" id="titulo" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;">
+    <main>
+        <form id="projetoForm" class="card">
+            <h1>Cadastrar Novo Projeto</h1>
+            <p style="margin-bottom: 1.5rem;">Preencha os dados abaixo para salvar no banco de dados Supabase.</p>
+            
+            <div>
+                <label for="titulo">Título do Projeto</label>
+                <input type="text" id="titulo" required>
             </div>
             
-            <div style="margin-bottom: 1rem;">
-                <label for="descricao" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Descrição</label>
-                <textarea id="descricao" rows="4" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+            <div>
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" rows="4" required></textarea>
             </div>
 
-            <div style="margin-bottom: 1.5rem;">
-                <label for="link" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Link do Projeto</label>
-                <input type="url" id="link" placeholder="https://..." required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;">
+            <div>
+                <label for="link">Link do Projeto</label>
+                <input type="url" id="link" placeholder="https://..." required>
             </div>
             
-            <button type="submit" class="btn" style="width: 100%; cursor: pointer; border: none;">Salvar no Supabase</button>
+            <button type="submit" class="btn" style="width: 100%;">Salvar no Supabase</button>
             <p id="statusMsg" style="margin-top: 1rem; text-align: center; font-weight: 500;"></p>
         </form>
     </main>
+
+    <footer>
+        <p>&copy; 2026 - Desenvolvido com foco em SEO e semântica.</p>
+    </footer>
 
     <script>
         const SUPABASE_URL = 'https://ffciozzntkkcedlgjnsv.supabase.co';
@@ -54,7 +58,7 @@
             e.preventDefault();
             const statusMsg = document.getElementById('statusMsg');
             statusMsg.textContent = "Salvando...";
-            statusMsg.style.color = "#555";
+            statusMsg.style.color = "#38bdf8";
 
             const titulo = document.getElementById('titulo').value;
             const descricao = document.getElementById('descricao').value;
@@ -69,7 +73,7 @@
                 statusMsg.style.color = "red";
             } else {
                 statusMsg.textContent = "Projeto salvo com sucesso no Supabase!";
-                statusMsg.style.color = "green";
+                statusMsg.style.color = "#34d399";
                 document.getElementById('projetoForm').reset();
             }
         });
