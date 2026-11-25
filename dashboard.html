@@ -20,29 +20,31 @@
         </nav>
     </header>
 
-    <main>
-        <form id="projetoForm" class="card">
+    <main style="max-width: 650px;">
+        <section class="card">
             <h1>Cadastrar Novo Projeto</h1>
             <p style="margin-bottom: 1.5rem;">Preencha os dados abaixo para salvar no banco de dados Supabase.</p>
             
-            <div>
-                <label for="titulo">Título do Projeto</label>
-                <input type="text" id="titulo" required>
-            </div>
-            
-            <div>
-                <label for="descricao">Descrição</label>
-                <textarea id="descricao" rows="4" required></textarea>
-            </div>
+            <form id="projetoForm">
+                <div>
+                    <label for="titulo">Título do Projeto</label>
+                    <input type="text" id="titulo" placeholder="Ex: Sistema de Automação" required>
+                </div>
+                
+                <div>
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" rows="4" placeholder="Descreva o que foi desenvolvido..." required></textarea>
+                </div>
 
-            <div>
-                <label for="link">Link do Projeto</label>
-                <input type="url" id="link" placeholder="https://..." required>
-            </div>
-            
-            <button type="submit" class="btn" style="width: 100%;">Salvar no Supabase</button>
-            <p id="statusMsg" style="margin-top: 1rem; text-align: center; font-weight: 500;"></p>
-        </form>
+                <div>
+                    <label for="link">Link do Projeto</label>
+                    <input type="url" id="link" placeholder="https://..." required>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%;">Salvar no Supabase</button>
+                <p id="statusMsg" style="margin-top: 1rem; text-align: center; font-weight: 500;"></p>
+            </form>
+        </section>
     </main>
 
     <footer>
@@ -70,7 +72,7 @@
 
             if (error) {
                 statusMsg.textContent = "Erro ao salvar: " + error.message;
-                statusMsg.style.color = "red";
+                statusMsg.style.color = "#f87171";
             } else {
                 statusMsg.textContent = "Projeto salvo com sucesso no Supabase!";
                 statusMsg.style.color = "#34d399";
