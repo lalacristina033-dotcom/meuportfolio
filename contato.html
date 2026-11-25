@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com a Desenvolvedora Lavínia para parcerias e projetos.">
+    <title>Contato | Meu Portfólio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">MeuPortfólio</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="quemsoueu.html">Quem sou eu</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+                <li><a href="login.html" aria-label="Entrar na área restrita">🔒</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 600px;">
+        <section class="card">
+            <h1>Entre em Contato</h1>
+            <p style="margin-bottom: 1.5rem;">Tem alguma dúvida, proposta ou quer conversar sobre tecnologia? Envie uma mensagem!</p>
+            
+            <form id="leadForm">
+                <div>
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" placeholder="Como posso te chamar?" required>
+                </div>
+                <div>
+                    <label for="email">Seu E-mail</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required>
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Enviar Mensagem</button>
+                <p id="leadStatus" style="margin-top: 1rem; text-align: center; font-weight: 500;"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desenvolvido com foco em SEO e semântica.</p>
+        <p style="margin-top: 0.5rem;">
+            Conecte-se comigo: 
+            <a href="https://www.linkedin.com/in/seu-usuario" target="_blank" style="color: #38bdf8; text-decoration: none; font-weight: 600;">LinkedIn ↗</a>
+        </p>
+    </footer>
+
+    <script src="js/matrix.js"></script>
+    <script>
+        const SUPABASE_URL = 'https://ffciozzntkkcedlgjnsv.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZmY2lvenpudGtrY2VkbGdqbnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ4MTAyNjIsImV4cCI6MjExMDM4NjI2Mn0.gtJn41T6d5xUn-w3JV9FLaKh6UHOh07JyKvqmxr9PAU';
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const status = document.getElementById('leadStatus');
+            status.textContent = "Enviando...";
+            status.style.color = "#38bdf8";
+
+            const { error } = await supabaseClient.from('leads').insert([{
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                mensagem: document.getElementById('mensagem').value
+            }]);
+
+            if (error) {
+                status.textContent = "Erro ao enviar: " + error.message;
+                status.style.color = "#f87171";
+            } else {
+                status.textContent = "Mensagem enviada com sucesso!";
+                status.style.color = "#34d399";
+                document.getElementById('leadForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>
