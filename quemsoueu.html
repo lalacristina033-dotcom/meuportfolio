@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
+    <canvas id="matrix-bg"></canvas>
 
     <header>
         <nav>
@@ -17,7 +18,7 @@
                 <li><a href="index.html">Início</a></li>
                 <li><a href="quemsoueu.html" class="active">Quem sou eu</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="login.html" class="lock-icon" aria-label="Entrar na área restrita">🔒</a></li>
+                <li><a href="login.html" aria-label="Entrar na área restrita">🔒</a></li>
             </ul>
         </nav>
     </header>
@@ -26,14 +27,12 @@
         <div class="grid-2">
             <section class="card">
                 <h1>Quem sou eu</h1>
-                <p style="margin-bottom: 1.5rem;">
-                    Sou estudante do Ensino Médio Técnico e apaixonado por inovação, desenvolvimento web e tecnologia da informação.
-                </p>
+                <p style="margin-bottom: 1.5rem;">Sou estudante do Ensino Médio Técnico e apaixonado por inovação, desenvolvimento web e tecnologia da informação.</p>
                 <h2>Minha Formação e Interesses</h2>
                 <ul class="skills-list">
                     <li>Ensino Médio Integrado ao Técnico (EMTI)</li>
-                    <li>Desenvolvimento Front-end (HTML, CSS, JS)</li>
-                    <li>Automação e Robótica Educacional</li>
+                    <li>Desenvolvimento Front-end</li>
+                    <li>Automação e Robótica</li>
                     <li>Banco de Dados Supabase</li>
                 </ul>
             </section>
@@ -43,15 +42,15 @@
                 <form id="leadForm" style="margin-top: 1rem;">
                     <div>
                         <label for="nome">Seu Nome</label>
-                        <input type="text" id="nome" placeholder="Como posso te chamar?" required>
+                        <input type="text" id="nome" required>
                     </div>
                     <div>
                         <label for="email">Seu E-mail</label>
-                        <input type="email" id="email" placeholder="seu@email.com" required>
+                        <input type="email" id="email" required>
                     </div>
                     <div>
                         <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+                        <textarea id="mensagem" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn" style="width: 100%;">Enviar Mensagem</button>
                     <p id="leadStatus" style="margin-top: 0.8rem; font-weight: 500; text-align: center;"></p>
@@ -64,6 +63,7 @@
         <p>&copy; 2026 - Desenvolvido com foco em SEO e semântica.</p>
     </footer>
 
+    <script src="js/matrix.js"></script>
     <script>
         const SUPABASE_URL = 'https://ffciozzntkkcedlgjnsv.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZmY2lvenpudGtrY2VkbGdqbnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ4MTAyNjIsImV4cCI6MjExMDM4NjI2Mn0.gtJn41T6d5xUn-w3JV9FLaKh6UHOh07JyKvqmxr9PAU';
