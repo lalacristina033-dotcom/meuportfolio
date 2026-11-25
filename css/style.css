@@ -5,21 +5,21 @@
     box-sizing: border-box;
 }
 
-/* Fundo Cinza-Areia Suave (Excelente para descanso visual e leitura prolongada) */
+/* Fundo com um tom pastel vivo, aconchegante e relaxante (Azul-Petróleo Acinzentado muito suave) */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f4f4f0 !important; /* Tom areia claro muito suave, zero reflexo agressivo */
-    color: #2d3748 !important; /* Texto cinza-chumbo escuro de alta legibilidade */
+    background-color: #0f172a !important; /* Azul escuro profundo e suave, não agride a vista */
+    color: #e2e8f0 !important;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Cabeçalho Organizado */
+/* Cabeçalho com cor viva equilibrada */
 header {
-    background-color: #ffffff !important;
-    border-bottom: 1px solid #e2e8f0 !important;
+    background-color: #1e293b !important;
+    border-bottom: 1px solid #334155 !important;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -37,7 +37,7 @@ nav {
 .logo {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1a202c !important;
+    color: #38bdf8 !important; /* Azul vivo e elegante */
     text-decoration: none;
     letter-spacing: -0.3px;
 }
@@ -51,14 +51,14 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #4a5568 !important;
+    color: #94a3b8 !important;
     font-weight: 500;
     font-size: 0.95rem;
     transition: color 0.2s;
 }
 
 .nav-links a:hover {
-    color: #3182ce !important;
+    color: #38bdf8 !important; /* Azul vivo no hover */
 }
 
 /* Área Principal Centralizada */
@@ -70,11 +70,11 @@ main {
     flex: 1;
 }
 
-/* Tipografia Confortável */
+/* Tipografia Clara e Viva */
 h1 {
     font-size: 2rem;
     font-weight: 700;
-    color: #1a202c !important;
+    color: #f8fafc !important;
     margin-bottom: 0.75rem;
     letter-spacing: -0.5px;
 }
@@ -82,19 +82,19 @@ h1 {
 h2 {
     font-size: 1.35rem;
     font-weight: 600;
-    color: #2d3748 !important;
+    color: #f1f5f9 !important;
     margin-bottom: 0.75rem;
 }
 
 h3 {
     font-size: 1.15rem;
     font-weight: 600;
-    color: #2d3748 !important;
+    color: #f1f5f9 !important;
     margin-bottom: 0.5rem;
 }
 
 p, li {
-    color: #4a5568 !important;
+    color: #94a3b8 !important;
     font-size: 1rem;
     margin-bottom: 0.75rem;
 }
@@ -108,18 +108,18 @@ label {
     display: block;
     font-weight: 600;
     font-size: 0.9rem;
-    color: #2d3748 !important;
+    color: #cbd5e1 !important;
     margin-bottom: 0.35rem;
 }
 
-/* Cartões e Blocos com Fundo Neutro e Sombra Suave */
+/* Cartões com fundo azul-acinzentado moderno e bordas suaves */
 section, .card, #projetos-container > div {
-    background-color: #ffffff !important;
-    border: 1px solid #e2e8f0 !important;
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
     border-radius: 12px !important;
     padding: 2rem !important;
     margin-bottom: 1.5rem !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Formulários Organizados */
@@ -131,7 +131,7 @@ form {
     margin-top: 1rem;
 }
 
-/* Campos de Texto Confortáveis */
+/* Campos de Texto com fundo confortável */
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -139,32 +139,33 @@ input[type="url"],
 textarea {
     width: 100%;
     padding: 0.75rem 0.9rem;
-    border: 1px solid #cbd5e0 !important;
+    border: 1px solid #475569 !important;
     border-radius: 8px !important;
     font-family: inherit;
     font-size: 0.95rem;
-    background-color: #ffffff !important;
-    color: #1a202c !important;
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
     margin-bottom: 1.1rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, background-color 0.2s;
 }
 
 input::placeholder,
 textarea::placeholder {
-    color: #a0aec0 !important;
+    color: #64748b !important;
 }
 
 input:focus,
 textarea:focus {
     outline: none;
-    border-color: #3182ce !important;
-    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15) !important;
+    border-color: #38bdf8 !important;
+    background-color: #0f172a !important;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2) !important;
 }
 
-/* Botões Modernos e Equilibrados */
+/* Botões com cor viva moderna (Azui Turquesa Vibrante, sem ser agressivo) */
 .btn, button {
     display: inline-block;
-    background-color: #3182ce !important;
+    background: linear-gradient(135deg, #0ea5e9, #2563eb) !important;
     color: #ffffff !important;
     padding: 0.75rem 1.5rem;
     border-radius: 8px !important;
@@ -173,21 +174,21 @@ textarea:focus {
     font-size: 0.95rem;
     border: none !important;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: filter 0.2s;
 }
 
 .btn:hover, button:hover {
-    background-color: #2b6cb0 !important;
+    filter: brightness(1.15);
 }
 
 /* Rodapé Discreto */
 footer {
     text-align: center;
     padding: 1.5rem;
-    color: #718096 !important;
+    color: #64748b !important;
     font-size: 0.875rem;
-    border-top: 1px solid #e2e8f0 !important;
-    background-color: #ffffff !important;
+    border-top: 1px solid #334155 !important;
+    background-color: #1e293b !important;
     margin-top: auto;
 }
 
