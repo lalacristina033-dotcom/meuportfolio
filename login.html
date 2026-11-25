@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
+    <canvas id="matrix-bg"></canvas>
 
     <header>
         <nav>
@@ -17,7 +18,7 @@
                 <li><a href="index.html">Início</a></li>
                 <li><a href="quemsoueu.html">Quem sou eu</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="login.html" class="lock-icon active" aria-label="Entrar na área restrita">🔒</a></li>
+                <li><a href="login.html" class="active" aria-label="Entrar na área restrita">🔒</a></li>
             </ul>
         </nav>
     </header>
@@ -48,6 +49,7 @@
         <p>&copy; 2026 - Desenvolvido com foco em SEO e semântica.</p>
     </footer>
 
+    <script src="js/matrix.js"></script>
     <script>
         const SUPABASE_URL = 'https://ffciozzntkkcedlgjnsv.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZmY2lvenpudGtrY2VkbGdqbnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ4MTAyNjIsImV4cCI6MjExMDM4NjI2Mn0.gtJn41T6d5xUn-w3JV9FLaKh6UHOh07JyKvqmxr9PAU';
