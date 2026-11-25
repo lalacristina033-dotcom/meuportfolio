@@ -15,7 +15,7 @@
             <a href="index.html" class="logo">MeuPortfólio</a>
             <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="quemsoueu.html">Quem sou eu</a></li>
+                <li><a href="quemsoueu.html" class="active">Quem sou eu</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
                 <li><a href="login.html" class="lock-icon" aria-label="Entrar na área restrita">🔒</a></li>
             </ul>
@@ -23,41 +23,41 @@
     </header>
 
     <main>
-        <section class="card">
-            <h1>Quem sou eu</h1>
-            <p>
-                Sou estudante do Ensino Médio Técnico e apaixonado por inovação, desenvolvimento web e tecnologia da informação.
-            </p>
-        </section>
+        <div class="grid-2">
+            <section class="card">
+                <h1>Quem sou eu</h1>
+                <p style="margin-bottom: 1.5rem;">
+                    Sou estudante do Ensino Médio Técnico e apaixonado por inovação, desenvolvimento web e tecnologia da informação.
+                </p>
+                <h2>Minha Formação e Interesses</h2>
+                <ul class="skills-list">
+                    <li>Ensino Médio Integrado ao Técnico (EMTI)</li>
+                    <li>Desenvolvimento Front-end (HTML, CSS, JS)</li>
+                    <li>Automação e Robótica Educacional</li>
+                    <li>Banco de Dados Supabase</li>
+                </ul>
+            </section>
 
-        <section class="card">
-            <h2>Minha Formação e Interesses</h2>
-            <ul>
-                <li>Ensino Médio Integrado ao Técnico (EMTI)</li>
-                <li>Desenvolvimento Front-end (HTML, CSS, JavaScript)</li>
-                <li>Automação e Robótica Educacional</li>
-            </ul>
-        </section>
-
-        <section class="card">
-            <h2>Entre em Contato</h2>
-            <form id="leadForm">
-                <div>
-                    <label for="nome">Seu Nome</label>
-                    <input type="text" id="nome" required>
-                </div>
-                <div>
-                    <label for="email">Seu E-mail</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div>
-                    <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn">Enviar Mensagem</button>
-                <p id="leadStatus" style="margin-top: 0.8rem; font-weight: 500;"></p>
-            </form>
-        </section>
+            <section class="card">
+                <h2>Entre em Contato</h2>
+                <form id="leadForm" style="margin-top: 1rem;">
+                    <div>
+                        <label for="nome">Seu Nome</label>
+                        <input type="text" id="nome" placeholder="Como posso te chamar?" required>
+                    </div>
+                    <div>
+                        <label for="email">Seu E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div>
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Enviar Mensagem</button>
+                    <p id="leadStatus" style="margin-top: 0.8rem; font-weight: 500; text-align: center;"></p>
+                </form>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -73,6 +73,7 @@
             e.preventDefault();
             const status = document.getElementById('leadStatus');
             status.textContent = "Enviando...";
+            status.style.color = "#38bdf8";
 
             const { error } = await supabaseClient.from('leads').insert([{
                 nome: document.getElementById('nome').value,
@@ -82,10 +83,10 @@
 
             if (error) {
                 status.textContent = "Erro ao enviar: " + error.message;
-                status.style.color = "red";
+                status.style.color = "#f87171";
             } else {
                 status.textContent = "Mensagem enviada com sucesso!";
-                status.style.color = "green";
+                status.style.color = "#34d399";
                 document.getElementById('leadForm').reset();
             }
         });
