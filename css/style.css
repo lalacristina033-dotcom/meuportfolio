@@ -162,7 +162,7 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2) !important;
 }
 
-/* Botões com cor viva moderna (Azui Turquesa Vibrante, sem ser agressivo) */
+/* Botões com cor viva moderna */
 .btn, button {
     display: inline-block;
     background: linear-gradient(135deg, #0ea5e9, #2563eb) !important;
