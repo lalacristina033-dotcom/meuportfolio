@@ -16,21 +16,19 @@
             <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="quemsoueu.html">Quem sou eu</a></li>
-                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="portfolio.html" class="active">Portfólio</a></li>
                 <li><a href="login.html" class="lock-icon" aria-label="Entrar na área restrita">🔒</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="card">
-            <h1>Meus Projetos</h1>
-            <p>
-                Trabalhos carregados diretamente do meu banco de dados.
-            </p>
-        </section>
+        <div style="margin-bottom: 2.5rem;">
+            <h1 class="section-title" style="font-size: 2rem;">Meus Projetos</h1>
+            <p>Trabalhos carregados diretamente do meu banco de dados Supabase.</p>
+        </div>
 
-        <div id="listaProjetos" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        <div id="listaProjetos" class="grid-2">
             <p>Carregando projetos...</p>
         </div>
     </main>
@@ -59,10 +57,12 @@
             }
 
             container.innerHTML = data.map(proj => `
-                <article class="card" style="margin-bottom: 0 !important;">
-                    <h2>${proj.titulo}</h2>
-                    <p>${proj.descricao}</p>
-                    <a href="${proj.link}" target="_blank" class="btn" style="margin-top: 1rem;">Ver projeto</a>
+                <article class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">${proj.titulo}</h2>
+                        <p style="margin-bottom: 1.5rem;">${proj.descricao}</p>
+                    </div>
+                    <a href="${proj.link}" target="_blank" class="btn" style="align-self: flex-start;">Ver projeto ↗</a>
                 </article>
             `).join('');
         }
