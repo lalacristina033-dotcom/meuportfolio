@@ -338,3 +338,8 @@ footer {
     object-fit: contain;
     border-radius: 12px;
 }
+/* Efeito do Botão do WhatsApp */
+a[aria-label="Fale comigo no WhatsApp"]:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
