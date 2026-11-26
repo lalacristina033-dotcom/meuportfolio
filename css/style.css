@@ -318,3 +318,23 @@ footer {
         gap: 1rem;
     }
 }
+/* Ajuste da logo no cabeçalho e na caixa principal */
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.hero-avatar {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding: 1.5rem;
+}
+
+.hero-avatar img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+}
